@@ -76,8 +76,8 @@ $(document).ready(function() {
 
 // Your code here...
   var var1 = "";
-  var var2;
-  var total;
+  var var2 = "";
+  var total = "";
   var oper;
 
   function addVar(x, y) {
@@ -105,8 +105,41 @@ $(document).ready(function() {
     if (oper == null) {
       var1 = var1 + $(this).attr("value");
       console.log(var1);
-    };
-  })
+      $("#first-number").text(var1);
+    }
+    else {
+      var2 = var2 + $(this).attr("value");
+      $("#second-number").text(var2);
+    }
+  });
+
+  $(".operator").on("click", function() {
+    if (var1 == null) {  // if a first number has not been define, don't do anything
+
+    }
+    else if (oper == null) { // if a first variable has been defined, but an operator has not, then define the operator
+      oper = $(this).attr("value");
+      console.log(oper)
+      switch (oper) {
+        case "plus":
+          $("#operator").text("+");
+          break;
+        case "minus":
+          $("#operator").text("-");
+          break;
+        case "times":
+          $("#operator").text("X");
+          break;
+        case "divide":
+          $("#operator").text("÷");
+
+      }
+      // $("#operator").text(""); times divide power ÷
+    }
+    else if (oper != null && var2 == null) {
+
+    }
+  }) 
 
 });
 
