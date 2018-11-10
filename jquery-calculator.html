@@ -152,6 +152,30 @@ $(document).ready(function() {
           $("#first-number").text(var1);
           $("#second-number").text("");
           var2 = "";
+          oper = $(this).attr("value");
+          break;
+        case "minus":
+          var1 = subVar(var1, var2);
+          $("#first-number").text(var1);
+          $("#second-number").text("");
+          var2 = "";
+          oper = $(this).attr("value");
+          break;
+        case "times":
+          var1 = multVar(var1, var2);
+          $("#first-number").text(var1);
+          $("#second-number").text("");
+          var2 = "";
+          oper = $(this).attr("value");
+          break;
+        case "divide":
+          var1 = divVar(var1, var2);
+          $("#first-number").text(var1);
+          $("#second-number").text("");
+          var2 = "";
+          oper = $(this).attr("value");
+          break;
+
       }
     }
   }) 
