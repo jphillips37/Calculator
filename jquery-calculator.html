@@ -100,6 +100,8 @@ $(document).ready(function() {
     return total;
   }
 
+  // add function to raise to power
+
   $(".number").on("click", function() {
     
     if (oper == null) {
@@ -113,7 +115,7 @@ $(document).ready(function() {
     }
   });
 
-  $(".operator").on("click", function() {
+  $(".operator").on("click", function() {  //operator does not update on webpage, but correct operation is performed
     function switchOperator(value){
       
     }
@@ -140,7 +142,7 @@ $(document).ready(function() {
           $("#operator").text("^");
           break;        
       }
-      // $("#operator").text(""); times divide power ÷
+      // $("#operator").text(""); 
     }
     else if (oper != null && var2 == null) {
 
@@ -175,11 +177,24 @@ $(document).ready(function() {
           var2 = "";
           oper = $(this).attr("value");
           break;
-
+          // add power case here
       }
     }
-  }) 
-
+  });
+  $(".clear").on("click", function(){
+   console.log("Clear Clicked");
+   var cleared = $(this).attr("value");
+   clear = cleared;
+   console.log(clear);
+   $("#operator").html("");
+   $("#result").html("");
+   $("#first-number").html("");
+   $("#second-number").html("");
+   var1 = "";
+   var2 = "";
+   total = 0;
+   oper = null;
+ });
 });
 
 </script>
